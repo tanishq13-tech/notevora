@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background: #0066cc;
+  color: #fff;
+  padding: 5px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0%;
+  margin-top: 0%;
+}
+
+header h1 {
+  font-size: 40px;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0%; 
+  margin: 0;
+}
+
+header h1 img {
+  width: 200px;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+
+.hero {
+  text-align: center;
+  background: #e0f0ff;
+  padding: 50px 20px;
+}
+
+.hero h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+.hero1 {
+  text-align: center;
+  background: #0f1113;
+  padding: 5px 50px;
+  height: 30px;
+}
+
+.hero1 h2 {
+  font-size: 32px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.section {
+  padding: 40px 20px;
+  background: #fff;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ddd;
+}
+
+.section h3 {
+  color: #0066cc;
+  margin-bottom: 10px;
+}
+
+.section ul {
+  list-style-type: square;
+  margin-left: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+}
+
+form input, form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  padding: 10px;
+  background: #0066cc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #0052a3;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  bottom: 0%;
+}
+

@@ -1,0 +1,67 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Create Account</title>
+  <link rel="stylesheet" href="style1.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header style="text-align: left; display: flex;">
+    <h1> <img src="Notevora1-Logo-Transparent.png" alt="Notevora Logo" style="width: 60px; height: 60px;">Notevora</h1>
+    <nav style="margin-right: 15px;">
+      <a href="notevora.html">Home</a>
+      <a href="login.html">Back</a>
+    </nav>
+  </header>
+  <section class="content-section">
+    <div class="left-nav">
+      <img src="Notevora tag.png" style="box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);" alt="Side Image">
+    </div>
+
+    <div class="course-detail-container">
+      <div class="form-wrapper">
+        <div class="form-container">
+          <div style="text-align: center;">
+            <p style="font-size: 1.5rem; font-weight: 600; margin-bottom: 10px;">Create an account</p>
+          </div>
+
+          <form id="create_account">
+            <label>First name*</label>
+            <input type="text" placeholder="Enter first name" required>
+
+            <label>Last name*</label>
+            <input type="text" placeholder="Enter last name">
+
+            <label>Email address*</label>
+            <input type="email" placeholder="Enter email" required>
+
+            <label>Password*</label>
+            <input type="password" placeholder="Enter password" required>
+
+            <label>Again password*</label>
+            <input type="password" placeholder="Repeat password" required>
+
+            <a href="login.html">Have an account?</a>
+            <button type="submit" style="width: 100%; margin-top: 20px;">Signup</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Made with 💙 for PTU Students • © 2025 PTU Notevora</p>
+  </footer>
+
+  <script>
+    document.getElementById('create_account').addEventListener('submit', function (e) {
+      e.preventDefault();
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+
+</html>

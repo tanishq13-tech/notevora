@@ -1,0 +1,235 @@
+body {
+	
+        background-color: white;
+        color: rgb(0, 0, 0);
+        margin-top: auto;
+}
+
+header {
+  background: #0066cc;
+  color: #fff;
+  padding: 5px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0%;
+  margin-top: 0%;
+}
+
+header h1 {
+  font-size: 40px;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0%; 
+  margin: 0;
+}
+
+header h1 img {
+  width: 200px;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+  display: inline-block;
+}
+img1 {
+  width: 100%;
+  height: 100%;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  list-style: none;
+  
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+
+textarea {
+	resize: none;
+	text-align: center;
+	background-color: #D6EEEE;
+	border-radius: 50%;
+	font-weight: bold; 
+	}
+
+img {
+  border: none;
+  border-radius: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  margin: 0% ;
+  border: 0px solid #3c1efc;
+  
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.content-section {
+    
+    
+    display: flex; 
+    flex-wrap: wrap;
+    margin-bottom: 20px; 
+    margin-top: 100px;
+}
+
+.left-nav {
+    flex: 0 0 45%; 
+    width: 100%; 
+    background: #4d53f3;
+    padding: 0px;
+    box-sizing: border-box; 
+    margin-left: 60px;
+}
+
+.left-nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.course-detail-container {
+    flex: 1;  
+    background-color: rgb(128, 205, 241);
+    padding: 20px;
+    min-height: 200px; 
+    box-sizing: border-box; 
+    align-items: center;
+    justify-content: center;
+    margin-right: 60px;
+    width: 50%;
+}
+
+@media screen and (max-width: 700px) { 
+  .left-nav, .course-detail-container {
+    flex: 0 0 100%; 
+    max-width: 100%;
+  }
+}
+.form-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin: auto;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="otp"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #3c1efc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    .form-container a {
+      color: #3c1efc;
+      font-size: 13px;
+      display: block;
+      margin-top: 5px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .form-container a:hover {
+      color: #1e1efc;
+      text-decoration: underline;
+    }
+
+    .form-container button {
+      background-color: #1e1efc;
+      color: white;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+      float: right;
+      font-size: 1rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .form-container button:hover {
+      background: #0066cc;
+      transform: scale(1.05);
+    }
+
+    .clearfix {
+      clear: both;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #c5e0fb;
+      border: 1px solid #080505;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(60,30,252,0.08);
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card hover {
+      transform: scale(1.05);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.5em;
+      color: #333;
+    }
+
+    .card ul {
+      
+      padding: 0;
+      margin: auto;
+      text-align: left;
+    }
+
+    footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  bottom: 0%;
+}
