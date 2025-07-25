@@ -1,0 +1,220 @@
+<html>
+
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style1.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        .btn.number {
+            background-color: #fff;
+            color: #222;
+        }
+        .btn.number:hover {
+            background-color: #f3f3f3;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            background-color: #f9f6f7;
+            margin: 0;
+        }
+
+        .calculator {
+            width: 340px;
+            background-color: rgb(16, 108, 154);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 24px 20px 20px 20px;
+            box-sizing: border-box;
+        }
+
+        #display {
+            width: 100%;
+            height: 50px;
+            text-align: right;
+            font-size: 2em;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background: #fff;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            font-size: 1.5em;
+            padding: 20px;
+            border: none;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-sizing: border-box;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        button:hover {
+            background: #f1f1f1;
+            color: #0a3d62;
+        }
+
+        button.operator {
+            background-color: #f3eee6;
+            color: #0a3d62;
+        }
+
+        button.operator:hover {
+            background-color: #ffe6c7;
+        }
+
+        button.equal {
+            background-color: #a32e5b;
+            color: #fff;
+            grid-column: span 2;
+        }
+
+        button.equal:hover {
+            background-color: #d94f70;
+        }
+
+        button.clear {
+            background-color: #ffb3b3;
+            color: #a32e5b;
+        }
+
+        button.clear:hover {
+            background-color: #ffcccc;
+        }
+
+        .buttons button {
+            padding: 20px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <header style="text-align: left; display: flex;">
+        <h1> <img src="Notevora1-Logo-Transparent.png" alt="Notevora Logo" style="width: 60px; height: 60px;">Notevora
+        </h1>
+        <nav style="margin-right: 15px;">
+            <a href="index.html">Back</a>
+        </nav>
+    </header>
+    <section class="content-section">
+        <div class="left-nav">
+            <img src="Notevora tag.png" style="box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);" alt="Side Image">
+        </div>
+
+        <div class="course-detail-container">
+            <div class="form-wrapper">
+                <div class="form-container" style="display: flex; flex-direction: column; align-items: center;">
+                    <p style="font-size: 1.7rem; font-weight: 600; margin-bottom: 10px; text-align: center; letter-spacing: 1px;">Calculator</p>
+                    <div class="calculator">
+                    <input type="text" id="display" disabled aria-label="Calculator display">
+                    <div class="buttons">
+                        <button class="btn clear" onclick="clearDisplay()">C</button>
+                        <button class="btn" onclick="backspace()">⌫</button>
+                        <button class="btn operator" onclick="appendToDisplay('%')">%</button>
+                        <button class="btn operator" onclick="appendToDisplay('/')">÷</button>
+
+                        <button class="btn number" onclick="appendToDisplay('7')">7</button>
+                        <button class="btn number" onclick="appendToDisplay('8')">8</button>
+                        <button class="btn number" onclick="appendToDisplay('9')">9</button>
+                        <button class="btn operator" onclick="appendToDisplay('*')">×</button>
+
+                        <button class="btn number" onclick="appendToDisplay('4')">4</button>
+                        <button class="btn number" onclick="appendToDisplay('5')">5</button>
+                        <button class="btn number" onclick="appendToDisplay('6')">6</button>
+                        <button class="btn operator" onclick="appendToDisplay('-')">-</button>
+
+                        <button class="btn number" onclick="appendToDisplay('1')">1</button>
+                        <button class="btn number" onclick="appendToDisplay('2')">2</button>
+                        <button class="btn number" onclick="appendToDisplay('3')">3</button>
+                        <button class="btn operator" onclick="appendToDisplay('+')">+</button>
+
+                        <button class="btn number" onclick="appendToDisplay('0')">0</button>
+                        <button class="btn number" onclick="appendToDisplay('.')">.</button>
+                        <button class="btn equal" style="grid-column: span 2;" onclick="calculateResult()">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <footer>
+        <p>Made by Tanishq • © 2025 Notevora</p>
+    </footer>
+    <script>
+        const display = document.getElementById('display');
+        let lastResult = '';
+
+        function appendToDisplay(value) {
+            if (display.value === 'Error') display.value = '';
+            if (value === '.') {
+                const parts = display.value.split(/[-+*/%]/);
+                if (parts[parts.length - 1].includes('.')) return;
+            }
+            if (value === '%') {
+                const parts = display.value.split(/[-+*/]/);
+                if (parts[parts.length - 1].includes('%') || parts[parts.length - 1] === '') return;
+            }
+            display.value += value;
+        }
+
+        function clearDisplay() {
+            display.value = '';
+        }
+
+        function backspace() {
+            if (display.value === 'Error') {
+                display.value = '';
+            } else {
+                display.value = display.value.slice(0, -1);
+            }
+        }
+
+        function calculateResult() {
+            try {
+                let expression = display.value.replace(/×/g, '*').replace(/÷/g, '/');
+                expression = expression.replace(/(\d+(?:\.\d+)?)%/g, '($1/100)');
+                if (expression.trim() === '') return;
+                let result = eval(expression);
+                if (result === Infinity || result === -Infinity || isNaN(result)) {
+                    display.value = 'Error';
+                } else {
+                    display.value = result;
+                    lastResult = result;
+                }
+            } catch (error) {
+                display.value = 'Error';
+            }
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (display === document.activeElement) return;
+            if (e.key >= '0' && e.key <= '9') appendToDisplay(e.key);
+            if (e.key === '.') appendToDisplay('.');
+            if (e.key === '+') appendToDisplay('+');
+            if (e.key === '-') appendToDisplay('-');
+            if (e.key === '*' || e.key === 'x') appendToDisplay('*');
+            if (e.key === '/') appendToDisplay('/');
+            if (e.key === '%') appendToDisplay('%');
+            if (e.key === 'Enter' || e.key === '=') calculateResult();
+            if (e.key === 'Backspace') backspace();
+            if (e.key === 'Delete') clearDisplay();
+        });
+    </script>
+</body>
+
+</html>
