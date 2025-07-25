@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-@media screen and (max-width: 700px) { 
+@media screen and (min-width: 300px) { 
   header, body, footer, nav {
     flex: 0 0 100%; 
     max-width: 100%;
