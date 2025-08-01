@@ -227,7 +227,12 @@ body {
       margin: auto;
       text-align: left;
     }
-
+    
+    a {
+      text-decoration: none;
+      color: #080505;
+    }
+    
     footer {
   background: #333;
   color: #fff;
